@@ -21,6 +21,7 @@ function App() {
   const [activeSection, setActiveSection] = useState("home");
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const navigation = [
     { name: "Home", href: "#home", icon: null },
@@ -858,6 +859,28 @@ function App() {
         "Match duration: 3 sets of 25 points each",
         "FIVB rules will be followed",
       ],
+      studentCoordinators: [
+        {
+          name: "G.Prudhivi Kumar Naidu",
+          contact: "8978957575",
+          college: "VIIT",
+        },
+        {
+          name: "K.Harsh Vardhan",
+          contact: "8328042030",
+          college: "VIIT",
+        },
+        {
+          name: "T.Gulsan Sri Babu",
+          contact: "7981878173",
+          college: "VIIT",
+        },
+        {
+          name: "J.Arpana",
+          contact: "8383884187",
+          college: "VIPT",
+        },
+      ],
       facultyCoordinators: [
         {
           name: "G.Prudhivi Kumar Naidu",
@@ -895,6 +918,28 @@ function App() {
         "Team size: 6 players",
         "Match duration: 10-15 minutes per round",
         "Standard Kho-Kho rules will be followed",
+      ],
+      studentCoordinators: [
+        {
+          name: "G.Prudhivi Kumar Naidu",
+          contact: "8978957575",
+          college: "VIIT",
+        },
+        {
+          name: "K.Harsh Vardhan",
+          contact: "8328042030",
+          college: "VIIT",
+        },
+        {
+          name: "T.Gulsan Sri Babu",
+          contact: "7981878173",
+          college: "VIIT",
+        },
+        {
+          name: "J.Arpana",
+          contact: "8383884187",
+          college: "VIPT",
+        },
       ],
       facultyCoordinators: [
         {
@@ -934,6 +979,28 @@ function App() {
         "Match duration: 10-15 minutes per round",
         "Standard Kho-Kho rules will be followed",
       ],
+      studentCoordinators: [
+        {
+          name: "G.Prudhivi Kumar Naidu",
+          contact: "8978957575",
+          college: "VIIT",
+        },
+        {
+          name: "K.Harsh Vardhan",
+          contact: "8328042030",
+          college: "VIIT",
+        },
+        {
+          name: "T.Gulsan Sri Babu",
+          contact: "7981878173",
+          college: "VIIT",
+        },
+        {
+          name: "J.Arpana",
+          contact: "8383884187",
+          college: "VIPT",
+        },
+      ],
       facultyCoordinators: [
         {
           name: "G.Prudhivi Kumar Naidu",
@@ -971,6 +1038,28 @@ function App() {
         "Team size: 6 players",
         "Match duration: 10-15 minutes per round",
         "Standard Kho-Kho rules will be followed",
+      ],
+      studentCoordinators: [
+        {
+          name: "G.Prudhivi Kumar Naidu",
+          contact: "8978957575",
+          college: "VIIT",
+        },
+        {
+          name: "K.Harsh Vardhan",
+          contact: "8328042030",
+          college: "VIIT",
+        },
+        {
+          name: "T.Gulsan Sri Babu",
+          contact: "7981878173",
+          college: "VIIT",
+        },
+        {
+          name: "J.Arpana",
+          contact: "8383884187",
+          college: "VIPT",
+        },
       ],
       facultyCoordinators: [
         {
@@ -1010,6 +1099,28 @@ function App() {
         "Match duration: 10-15 minutes per round",
         "Standard Kho-Kho rules will be followed",
       ],
+      studentCoordinators: [
+        {
+          name: "G.Prudhivi Kumar Naidu",
+          contact: "8978957575",
+          college: "VIIT",
+        },
+        {
+          name: "K.Harsh Vardhan",
+          contact: "8328042030",
+          college: "VIIT",
+        },
+        {
+          name: "T.Gulsan Sri Babu",
+          contact: "7981878173",
+          college: "VIIT",
+        },
+        {
+          name: "J.Arpana",
+          contact: "8383884187",
+          college: "VIPT",
+        },
+      ],
       facultyCoordinators: [
         {
           name: "G.Prudhivi Kumar Naidu",
@@ -1047,6 +1158,28 @@ function App() {
         "Team size: 7 players",
         "Match duration: 10-15 minutes per round",
         "Standard Kho-Kho rules will be followed",
+      ],
+      studentCoordinators: [
+        {
+          name: "G.Prudhivi Kumar Naidu",
+          contact: "8978957575",
+          college: "VIIT",
+        },
+        {
+          name: "K.Harsh Vardhan",
+          contact: "8328042030",
+          college: "VIIT",
+        },
+        {
+          name: "T.Gulsan Sri Babu",
+          contact: "7981878173",
+          college: "VIIT",
+        },
+        {
+          name: "J.Arpana",
+          contact: "8383884187",
+          college: "VIPT",
+        },
       ],
       facultyCoordinators: [
         {
@@ -1290,7 +1423,7 @@ function App() {
               Register Now
             </a>
             <a
-              href="brochures"
+              href="#brochures"
               className="bg-transparent border-2 border-blue-500 hover:bg-blue-500/20 text-blue-700 px-8 py-3 rounded-full font-semibold transition-colors"
             >
               Learn More
@@ -1383,20 +1516,34 @@ function App() {
             Event Brochures
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <img
-              src="/src/assets/broucher1.jpg"
-              alt="Brochure 1"
-              className="w-full rounded-lg shadow-lg"
-            />
-            <img
-              src="/src//assets/broucher2.jpg"
-              alt="Brochure 2"
-              className="w-full rounded-lg shadow-lg"
-            />
+            {["/src/assets/broucher1.jpg", "/src/assets/broucher2.jpg"].map(
+              (src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`Brochure ${index + 1}`}
+                  className="w-full rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+                  onClick={() => setSelectedImage(src)}
+                />
+              )
+            )}
           </div>
         </div>
-      </section>
 
+        {/* Full-screen Image Modal */}
+        {selectedImage && (
+          <div
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+            onClick={() => setSelectedImage(null)}
+          >
+            <img
+              src={selectedImage}
+              alt="Zoomed Brochure"
+              className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg"
+            />
+          </div>
+        )}
+      </section>
       <section id="schedule" className="py-20 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-12 text-center text-gray-900">
